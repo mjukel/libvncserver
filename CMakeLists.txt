@@ -857,3 +857,6 @@ if(LIBVNCSERVER_INSTALL)
         DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig
         )
 endif()
+
+add_executable(vnc_shared shared/vnc_shared.c shared/args.c)
+target_link_libraries(vnc_shared vncclient ${CMAKE_THREAD_LIBS_INIT})
